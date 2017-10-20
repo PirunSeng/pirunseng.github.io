@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Pirun Seng]]></title>
-  <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Postgressql | Pirun Seng]]></title>
+  <link href="http://pirunseng.github.io/blog/categories/postgressql/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
   <updated>2017-10-20T16:36:01+07:00</updated>
   <id>http://pirunseng.github.io/</id>
@@ -20,7 +20,7 @@
     <id>http://pirunseng.github.io/blog/2017/10/20/dump-postgres-data-from-specific-table</id>
     <content type="html"><![CDATA[<p>If you&rsquo;re in a hurry to make your code work as expected, and you don&rsquo;t prefer to read the document much, we have something in common. And this article is right for you.</p>
 
-<p><img class="[test]" src="http://pirunseng.github.io/images/pg/dump_table.png" title="Dump Table" ></p>
+<p><img class="[test]" src="/images/pg/dump_table.png" title="Dump Table" ></p>
 
 <p>If we haven&rsquo;t read the note of the document as the screenshot above, then we missed something. And what we missed is the prefix schema name on our table name. So, instead of <code>-n schema_name -t table_name</code>, we should use this <code>-t schema_name.table_name</code>.</p>
 
