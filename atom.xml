@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2017-10-21T17:56:46+07:00</updated>
+  <updated>2017-10-21T18:02:06+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun]]></name>
@@ -12,37 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Backup and Restore Postgres Database From Amazon RDS]]></title>
-    <link href="http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/"/>
-    <updated>2017-10-20T16:59:33+07:00</updated>
-    <id>http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds</id>
-    <content type="html"><![CDATA[<p>There are two things might happen when we do the backup and restore database. We need to know whether the database is located in local server or in any separate server like RDS.</p>
-
-<p>Here, I&rsquo;d like to raise two ways of backup Postgres database. One is the local database, and other one is the separate database.</p>
-
-<p><strong>Local Database</strong></p>
-
-<pre><code>Backup: pg_dump -n schema_name -d db_name &gt; backup_filename.dump
-
-Restore: psql db_name &lt; backup_filename.dump
-</code></pre>
-
-<p><strong>Host Database (Amazon RDS)</strong> (You will be prompted to type your database password.)</p>
-
-<pre><code>Backup: pg_dump -h db_host -p db_port -U db_user -n schema_name -d db_name &gt; backup_filename.dump
-
-Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
-</code></pre>
-
-<p>You should notice that we need to specify database host, port and user if we have the database setup in a host server, Amazon RDS in my case. That is the important point that some developers might forget.</p>
-
-<p>For further detail of the other backup and restore options, please refer to the <a href="https://www.postgresql.org/docs/">PostgreSQL docs</a> and look for database backup and that applies to the Postgres version you use.</p>
-
-<p>Enjoy your DBA time!</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dump Postgres Data From Specific Table]]></title>
