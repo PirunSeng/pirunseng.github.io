@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Dump Postgres Data From Specific Table - Pirun Seng</title>
+  <title>Backup and Restore Postgres Database From Amazon RDS - Pirun Seng</title>
   <meta name="author" content="Pirun">
 
   
-  <meta name="description" content="If you&rsquo;re in a hurry to make your code work as expected, and you don&rsquo;t prefer to read the document much, we have something in common. And &hellip;">
+  <meta name="description" content="There are two things might happen when we do the backup and restore database. We need to know whether the database is located in local server or in &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pirunseng.github.io/blog/2017/10/20/dump-postgres-data-from-specific-table/">
+  <link rel="canonical" href="http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Pirun Seng" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Dump Postgres Data From Specific Table</h1>
+      <h1 class="entry-title">Backup and Restore Postgres Database From Amazon RDS</h1>
     
     
       <p class="meta">
@@ -77,20 +77,36 @@
 
 
 
-<time class='entry-date' datetime='2017-10-20T15:59:56+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>3:59 pm</span></time>
+<time class='entry-date' datetime='2017-10-20T16:59:33+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>4:59 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>If you&rsquo;re in a hurry to make your code work as expected, and you don&rsquo;t prefer to read the document much, we have something in common. And this article is right for you.</p>
+<div class="entry-content"><p>There are two things might happen when we do the backup and restore database. We need to know whether the database is located in local server or in any separate server like RDS.</p>
 
-<p><img class="[test]" src="/images/pg/dump_table.png" title="Dump Table" ></p>
+<p>Here, I&rsquo;d like to raise two ways of backup Postgres database. One is the local database, and other one is the separate database.</p>
 
-<p>If we haven&rsquo;t read the note of the document as the screenshot above, then we missed something. And what we missed is the prefix schema name on our table name. So, instead of <code>-n schema_name -t table_name</code>, we should use this <code>-t schema_name.table_name</code>.</p>
+<p><strong>Local Database</strong></p>
 
-<p>Happy coding!</p>
+<pre><code>Backup: pg_dump -n schema_name -d db_name &gt; backup_filename.dump
+
+Restore: psql db_name &lt; backup_filename.dump
+</code></pre>
+
+<p><strong>Host Database (Amazon RDS)</strong> (You will be prompted to type your database password.)</p>
+
+<pre><code>Backup: pg_dump -h db_host -p db_port -U db_user -n schema_name -d db_name &gt; backup_filename.dump
+
+Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
+</code></pre>
+
+<p>You should notice that we need to specify database host, port and user if we have the database setup in a host server, Amazon RDS in my case. That is the important point that some developers might forget.</p>
+
+<p>For further detail of the other backup and restore options, please refer to the <a href="https://www.postgresql.org/docs/">PostgreSQL docs</a> and look for database backup and that applies to the Postgres version you use.</p>
+
+<p>Enjoy your DBA time!</p>
 </div>
 
 
@@ -106,7 +122,7 @@
 
 
 
-<time class='entry-date' datetime='2017-10-20T15:59:56+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>3:59 pm</span></time>
+<time class='entry-date' datetime='2017-10-20T16:59:33+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>4:59 pm</span></time>
       
 
 <span class="categories">
@@ -120,7 +136,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pirunseng.github.io/blog/2017/10/20/dump-postgres-data-from-specific-table/" data-via="" data-counturl="http://pirunseng.github.io/blog/2017/10/20/dump-postgres-data-from-specific-table/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/" data-via="" data-counturl="http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/" >Tweet</a>
   
   
   
@@ -129,8 +145,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2017/10/20/dump-postgres-data-from-specific-table/" title="Previous Post: Dump Postgres data from specific table">&laquo; Dump Postgres data from specific table</a>
       
-        <a class="basic-alignment right" href="/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/" title="Next Post: Backup and Restore Postgres Database From Amazon RDS">Backup and Restore Postgres Database From Amazon RDS &raquo;</a>
       
     </p>
   </footer>
