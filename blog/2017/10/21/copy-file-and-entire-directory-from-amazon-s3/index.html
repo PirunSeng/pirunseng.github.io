@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Backup and Restore Postgres Database From Amazon RDS - Pirun Seng</title>
+  <title>Copy File and Entire Directory From Amazon S3 to Local Machine - Pirun Seng</title>
   <meta name="author" content="Pirun">
 
   
-  <meta name="description" content="There are two things might happen when we do the backup and restore database. We need to know whether the database is located in local server or in &hellip;">
+  <meta name="description" content="First thing we need to do is to install Amazon Web Service Command Line Interface (AWS CLI). Depending on your environment, there are different ways &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/">
+  <link rel="canonical" href="http://pirunseng.github.io/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Pirun Seng" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Backup and Restore Postgres Database From Amazon RDS</h1>
+      <h1 class="entry-title">Copy File and Entire Directory From Amazon S3 to Local Machine</h1>
     
     
       <p class="meta">
@@ -77,36 +77,34 @@
 
 
 
-<time class='entry-date' datetime='2017-10-20T16:59:33+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>4:59 pm</span></time>
+<time class='entry-date' datetime='2017-10-21T18:06:56+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2017</span></span> <span class='time'>6:06 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>There are two things might happen when we do the backup and restore database. We need to know whether the database is located in local server or in any separate server like RDS.</p>
+<div class="entry-content"><p>First thing we need to do is to install <strong>Amazon Web Service Command Line Interface</strong> (AWS CLI).</p>
 
-<p>Here, I&rsquo;d like to raise two ways of backup Postgres database. One is the local database, and other one is the separate database.</p>
+<p>Depending on your environment, there are different ways to <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">install AWS CLI</a>. I&rsquo;m using Mac OSX, and I prefer to install it via Homebrew <code>brew install awscli</code>.</p>
 
-<p><strong>Local Database</strong></p>
+<p>Then we need to configure awscli by running: <code>aws configure</code>. You will be prompted to put your AWS Access Key Id, Secret Key, Region and Output. The following is an example:</p>
 
-<pre><code>Backup: pg_dump -n schema_name -d db_name &gt; backup_filename.dump
-
-Restore: psql db_name &lt; backup_filename.dump
+<pre><code>Access key : foo
+Secret key : bar
+Region     : us-west-1
+Output     : json
 </code></pre>
 
-<p><strong>Host Database (Amazon RDS)</strong> (You will be prompted to type your database password.)</p>
+<p>We are all set. Now, I gonna show you how we copy a specific file and an entire directory from Amazon S3.</p>
 
-<pre><code>Backup: pg_dump -h db_host -p db_port -U db_user -n schema_name -d db_name &gt; backup_filename.dump
+<p><strong>Copy a file : </strong> <code>aws s3 cp s3://bucket_name/dir/file.png local_path</code></p>
 
-Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
-</code></pre>
+<p><strong>Copy a directory : </strong> <code>aws s3 cp --recursive s3://bucket_name/dir local_path</code></p>
 
-<p>You should notice that we need to specify database host, port and user if we have the database setup in a host server, Amazon RDS in my case. That is the important point that some developers might forget.</p>
+<p>The example above, I show you how to copy a file, &lsquo;file.png&rsquo;, and an entire directory, &lsquo;dir&rsquo;, by specifying <code>--recursive</code> option from Amazon S3 to your local machine or directory where you specify <code>local_path</code>.</p>
 
-<p>For further detail of the other backup and restore options, please refer to the <a href="https://www.postgresql.org/docs/">PostgreSQL docs</a> and look for database backup and that applies to the Postgres version you use.</p>
-
-<p>Enjoy your DBA time!</p>
+<p>Enjoy!</p>
 </div>
 
 
@@ -122,12 +120,12 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
 
 
 
-<time class='entry-date' datetime='2017-10-20T16:59:33+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>4:59 pm</span></time>
+<time class='entry-date' datetime='2017-10-21T18:06:56+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2017</span></span> <span class='time'>6:06 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/postgressql/'>postgressql</a>
+    <a class='category' href='/blog/categories/devops/'>devops</a>
   
 </span>
 
@@ -136,7 +134,7 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/" data-via="" data-counturl="http://pirunseng.github.io/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pirunseng.github.io/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3/" data-via="" data-counturl="http://pirunseng.github.io/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3/" >Tweet</a>
   
   
   
@@ -145,10 +143,8 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2017/10/20/dump-postgres-data-from-specific-table/" title="Previous Post: Dump Postgres data from specific table">&laquo; Dump Postgres data from specific table</a>
+        <a class="basic-alignment left" href="/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/" title="Previous Post: Backup and Restore Postgres Database From Amazon RDS">&laquo; Backup and Restore Postgres Database From Amazon RDS</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3/" title="Next Post: Copy File and Entire Directory from Amazon S3 to Local Machine">Copy File and Entire Directory from Amazon S3 to Local Machine &raquo;</a>
       
     </p>
   </footer>

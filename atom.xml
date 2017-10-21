@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2017-10-21T18:02:08+07:00</updated>
+  <updated>2017-10-21T18:34:08+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Copy File and Entire Directory From Amazon S3 to Local Machine]]></title>
+    <link href="http://pirunseng.github.io/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3/"/>
+    <updated>2017-10-21T18:06:56+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3</id>
+    <content type="html"><![CDATA[<p>First thing we need to do is to install <strong>Amazon Web Service Command Line Interface</strong> (AWS CLI).</p>
+
+<p>Depending on your environment, there are different ways to <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">install AWS CLI</a>. I&rsquo;m using Mac OSX, and I prefer to install it via Homebrew <code>brew install awscli</code>.</p>
+
+<p>Then we need to configure awscli by running: <code>aws configure</code>. You will be prompted to put your AWS Access Key Id, Secret Key, Region and Output. The following is an example:</p>
+
+<pre><code>Access key : foo
+Secret key : bar
+Region     : us-west-1
+Output     : json
+</code></pre>
+
+<p>We are all set. Now, I gonna show you how we copy a specific file and an entire directory from Amazon S3.</p>
+
+<p><strong>Copy a file : </strong> <code>aws s3 cp s3://bucket_name/dir/file.png local_path</code></p>
+
+<p><strong>Copy a directory : </strong> <code>aws s3 cp --recursive s3://bucket_name/dir local_path</code></p>
+
+<p>The example above, I show you how to copy a file, &lsquo;file.png&rsquo;, and an entire directory, &lsquo;dir&rsquo;, by specifying <code>--recursive</code> option from Amazon S3 to your local machine or directory where you specify <code>local_path</code>.</p>
+
+<p>Enjoy!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Backup and Restore Postgres Database From Amazon RDS]]></title>
