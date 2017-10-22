@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2017-10-21T22:08:03+07:00</updated>
+  <updated>2017-10-22T10:08:13+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Undo Git Merge]]></title>
+    <link href="http://pirunseng.github.io/blog/2017/10/22/undo-git-merge/"/>
+    <updated>2017-10-22T09:52:46+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2017/10/22/undo-git-merge</id>
+    <content type="html"><![CDATA[<p><img src="http://pirunseng.github.io/images/git.png" title="Git" alt="Git" /></p>
+
+<p><strong>Git</strong> is awesome and that I&rsquo;ve used it along with my career, software development, so far.</p>
+
+<p>I sometimes get confused doing git merge between branches. When it is a tough time preparing to release my feature to test server in which I have to merge the latest master branch, into my current working branch, let say <strong>update-layout</strong> branch.</p>
+
+<p>Unexpectedly, I have merged <strong>update-layout</strong> into <strong>master</strong>. Actually, I want to merge <strong>master</strong> into <strong>update-layout</strong>.</p>
+
+<p>Luckily, I haven&rsquo;t pushed the master yet so that I can revert/undo merge safely.</p>
+
+<p>To undo the merge, it is as simply as the following:</p>
+
+<ul>
+<li>Stay on <strong>master</strong> branch by <code>git checkout master</code></li>
+<li>Type <code>git log</code> on the terminal to see the commit histories.</li>
+<li>Find the latest commit of <strong>master</strong> branch we want to revert to.</li>
+<li>Copy the commit <strong>sha</strong>, e.g. <strong>dbf0e49</strong>.</li>
+<li>Back to terminal and type <code>git reset --hard dbf0e49</code></li>
+<li>It&rsquo;s done! We&rsquo;re on the latest commit as we want to revert/undo merge.</li>
+</ul>
+
+
+<p>If we&rsquo;re ready to merge <strong>update-layout</strong> into <strong>master</strong> or redo merge, it can be done easily for just do the merge again.</p>
+
+<p>Happy with Git!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Copy File and Entire Directory From Amazon S3 to Local Machine]]></title>
