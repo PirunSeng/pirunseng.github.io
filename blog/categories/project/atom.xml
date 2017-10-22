@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Project | Pirun Seng]]></title>
+  <link href="http://pirunseng.github.io/blog/categories/project/atom.xml" rel="self"/>
+  <link href="http://pirunseng.github.io/"/>
+  <updated>2017-10-22T10:27:50+07:00</updated>
+  <id>http://pirunseng.github.io/</id>
+  <author>
+    <name><![CDATA[Pirun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fast Finder]]></title>
+    <link href="http://pirunseng.github.io/blog/2017/10/22/fast-finder/"/>
+    <updated>2017-10-22T10:22:57+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2017/10/22/fast-finder</id>
+    <content type="html"><![CDATA[<p>As a searcher, I usually spend much time looking for what I want and the right thing.
+Anyway, I sometimes feel not really good to spend much time looking for the things, but I still cannot find the right resources or solutions.</p>
+
+<p>This makes me create a <em>simple app</em> called <strong>Fast Finder</strong> which <em>records all right resources and solutions</em> I have found. The main objective is to find the right thing faster. I hosted it on <a href="https://www.heroku.com/">Heroku</a>.</p>
+
+<p>Recently, most resources are for <strong>Ruby</strong> and <strong>Ruby on Rails</strong> as I am a Rails Developer. Anyway, it will be for many more languages, programming languages, frameworks and technologies as it is growing and from your contribution.</p>
+
+<p>Check out the link here: <a href="https://fastfinder.herokuapp.com/">Fast Finder</a></p>
+
+<p>Nice day!</p>
+]]></content>
+  </entry>
+  
+</feed>
