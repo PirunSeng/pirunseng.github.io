@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2017-10-22T10:08:13+07:00</updated>
+  <updated>2017-10-22T10:20:31+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Make Use of Library We Use]]></title>
+    <link href="http://pirunseng.github.io/blog/2017/10/22/make-use-of-library-we-use/"/>
+    <updated>2017-10-22T10:12:47+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2017/10/22/make-use-of-library-we-use</id>
+    <content type="html"><![CDATA[<p>When I was a fresh <strong>Software Developer</strong>, I usually looked for libraries which were suit for programming language I used <strong>Ruby</strong>, in my case.</p>
+
+<p>It is awesome that there is a <strong>Ruby on Rails</strong> which is a framework for <strong>Ruby</strong>. Plus, there are lots of <a href="https://rubygems.org/">Ruby Gems</a> that are designed to help building software with <strong>Ruby</strong> and <strong>Ruby on Rails</strong> as well.</p>
+
+<p>Jump to the point, when I used any Ruby gems, I just built thing with its main and basic usage. Once I came up with an idea to build something more advanced along with that library, my brainstorm was to write the things from scratch. Then, I did research on google for some concepts.</p>
+
+<p>Soon, there was another idea came to my brain. <em>&ldquo;Why didn&rsquo;t I read more document about the library I were using to see whether or not it had what I wanted?&rdquo;</em></p>
+
+<p>Bang! It was just a few minutes searching the feature in its the document, I found the exactly thing as I wanted.</p>
+
+<p>To sum up, it is good to know what main features exist in the library we use, but it is much better to discover everything it can do.</p>
+
+<p>Happy coding!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Undo Git Merge]]></title>

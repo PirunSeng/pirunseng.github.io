@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pirunseng.github.io/blog/2017/10/22/make-use-of-library-we-use/</loc>
+<lastmod>2017-10-22T10:12:47+07:00</lastmod>
+</url>
+<url>
 <loc>http://pirunseng.github.io/blog/2017/10/22/undo-git-merge/</loc>
 <lastmod>2017-10-22T09:52:46+07:00</lastmod>
 </url>
@@ -30,5 +34,8 @@
 </url>
 <url>
 <loc>http://pirunseng.github.io/blog/categories/git/</loc>
+</url>
+<url>
+<loc>http://pirunseng.github.io/blog/categories/general/</loc>
 </url>
 </urlset>
