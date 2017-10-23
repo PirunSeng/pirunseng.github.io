@@ -9,8 +9,7 @@
   <meta name="author" content="Pirun">
 
   
-  <meta name="description" content="As a searcher, I usually spend much time looking for what I want and the right thing.
-Anyway, I sometimes feel not really good to spend much time &hellip;">
+  <meta name="description" content="Carrierwave is a classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks. I am going to demonstrate How to: Upload files &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,57 @@ Anyway, I sometimes feel not really good to spend much time &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/10/23/how-to-upload-files-from-remote-location-with-carrierwave/">How to Upload Files From Remote Location With Carrierwave</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-10-23T22:24:02+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2017</span></span> <span class='time'>10:24 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Carrierwave</strong> is a classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks.</p>
+
+<p>I am going to demonstrate <strong>How to: Upload files from a remote location to JSONB or Array image column</strong>.
+For installation and configuration, I would recommend you to read <a href="https://github.com/carrierwaveuploader/carrierwave">Carrierwave document</a>.</p>
+
+<p>Let say we have an <strong>Avatar</strong> model with an <code>image</code> column of array data type.
+To create a new Avatar record with an image:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>avatar = Avatar.new
+</span><span class='line'>avatar.remote_image_urls = ['https://image.flaticon.com/icons/png/512/25/25231.png']
+</span><span class='line'>avatar.save</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Note:</strong> We use <code>remote_image_urls</code> for <strong>jsonb</strong> or <strong>array</strong> data type column while we use <code>remote_image_url</code> for <strong>string</strong> data type column.</p>
+
+<p>Please feel tree to replace <code>image</code> to any column name you use to store the file or image. e.g If your <strong>Avatar</strong> model has a column named <code>photo</code>, then you might want to modify the syntax above to <code>remote_photo_url</code> and <code>remote_photo_urls</code>.</p>
+
+<p>You can dig deeper to its source code <a href="https://github.com/carrierwaveuploader/carrierwave/blob/87c37b706c560de6d01816f9ebaa15ce1c51ed58/lib/carrierwave/mount.rb">here</a>.</p>
+
+<p>Happy coding!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -347,6 +397,10 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/10/23/how-to-upload-files-from-remote-location-with-carrierwave/">How to Upload Files From Remote Location With Carrierwave</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/10/22/fast-finder/">Fast Finder</a>
       </li>
     
@@ -360,10 +414,6 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
     
       <li class="post">
         <a href="/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3/">Copy File and Entire Directory From Amazon S3 to Local Machine</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/">Backup and Restore Postgres Database From Amazon RDS</a>
       </li>
     
   </ul>

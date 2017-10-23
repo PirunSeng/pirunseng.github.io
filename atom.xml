@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2017-10-22T10:27:50+07:00</updated>
+  <updated>2017-10-23T22:35:03+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Upload Files From Remote Location With Carrierwave]]></title>
+    <link href="http://pirunseng.github.io/blog/2017/10/23/how-to-upload-files-from-remote-location-with-carrierwave/"/>
+    <updated>2017-10-23T22:24:02+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2017/10/23/how-to-upload-files-from-remote-location-with-carrierwave</id>
+    <content type="html"><![CDATA[<p><strong>Carrierwave</strong> is a classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks.</p>
+
+<p>I am going to demonstrate <strong>How to: Upload files from a remote location to JSONB or Array image column</strong>.
+For installation and configuration, I would recommend you to read <a href="https://github.com/carrierwaveuploader/carrierwave">Carrierwave document</a>.</p>
+
+<p>Let say we have an <strong>Avatar</strong> model with an <code>image</code> column of array data type.
+To create a new Avatar record with an image:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>avatar = Avatar.new
+</span><span class='line'>avatar.remote_image_urls = ['https://image.flaticon.com/icons/png/512/25/25231.png']
+</span><span class='line'>avatar.save</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Note:</strong> We use <code>remote_image_urls</code> for <strong>jsonb</strong> or <strong>array</strong> data type column while we use <code>remote_image_url</code> for <strong>string</strong> data type column.</p>
+
+<p>Please feel tree to replace <code>image</code> to any column name you use to store the file or image. e.g If your <strong>Avatar</strong> model has a column named <code>photo</code>, then you might want to modify the syntax above to <code>remote_photo_url</code> and <code>remote_photo_urls</code>.</p>
+
+<p>You can dig deeper to its source code <a href="https://github.com/carrierwaveuploader/carrierwave/blob/87c37b706c560de6d01816f9ebaa15ce1c51ed58/lib/carrierwave/mount.rb">here</a>.</p>
+
+<p>Happy coding!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fast Finder]]></title>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Devops | Pirun Seng]]></title>
-  <link href="http://pirunseng.github.io/blog/categories/devops/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Aws | Pirun Seng]]></title>
+  <link href="http://pirunseng.github.io/blog/categories/aws/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2017-10-22T10:27:50+07:00</updated>
+  <updated>2017-10-23T22:35:03+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun]]></name>
