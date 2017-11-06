@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2017-10-23T22:35:03+07:00</updated>
+  <updated>2017-11-06T21:32:30+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Active Record Finder Methods - Find or Find_by]]></title>
+    <link href="http://pirunseng.github.io/blog/2017/11/06/active-record-finder-methods-find-or-find-by/"/>
+    <updated>2017-11-06T21:11:24+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2017/11/06/active-record-finder-methods-find-or-find-by</id>
+    <content type="html"><![CDATA[<p>There might be sometimes that we get an unexpected exception where we use ActiveRecord::FinderMethods <code>find</code> and <code>find_by</code>.</p>
+
+<p>So we need to be sure whether to use <code>find</code> or <code>find_by</code> where we are finding active record.</p>
+
+<p>The main difference between <code>find</code> and <code>find_by</code> is the answer to this question, <strong>what we want to return once the record is not found?</strong> We will want to use <code>find_by</code> when we want to return <strong><em>nil</em></strong> if no record is found while we use <code>find</code> to expect the exception, <strong><em>ActiveRecord::RecordNotFound</em></strong>, to be raised.</p>
+
+<p>To discover more about Active Record Finder Methods, please refer to the <a href="http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html">API document</a>.</p>
+
+<p>Happy coding!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Upload Files From Remote Location With Carrierwave]]></title>
