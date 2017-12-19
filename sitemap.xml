@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pirunseng.github.io/blog/2017/12/19/continuous-integration-with-codeship/</loc>
+<lastmod>2017-12-19T08:19:06+07:00</lastmod>
+</url>
+<url>
 <loc>http://pirunseng.github.io/blog/2017/11/06/active-record-finder-methods-find-or-find-by/</loc>
 <lastmod>2017-11-06T21:11:24+07:00</lastmod>
 </url>
@@ -33,10 +37,10 @@
 <lastmod>2017-10-20T15:59:56+07:00</lastmod>
 </url>
 <url>
-<loc>http://pirunseng.github.io/blog/archives/</loc>
+<loc>http://pirunseng.github.io/</loc>
 </url>
 <url>
-<loc>http://pirunseng.github.io/</loc>
+<loc>http://pirunseng.github.io/blog/archives/</loc>
 </url>
 <url>
 <loc>http://pirunseng.github.io/blog/categories/postgresql/</loc>
@@ -58,5 +62,8 @@
 </url>
 <url>
 <loc>http://pirunseng.github.io/blog/categories/rails/</loc>
+</url>
+<url>
+<loc>http://pirunseng.github.io/blog/categories/ci/</loc>
 </url>
 </urlset>

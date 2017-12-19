@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Continuous Integration With Codeship - Pirun Seng</title>
+  <meta name="author" content="Pirun">
+
+  
+  <meta name="description" content="Codeship is one of a very cool Continuous Integration (CI) platform. It comes with pre-installed various programming languages, frameworks and &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pirunseng.github.io/blog/2017/12/19/continuous-integration-with-codeship/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Pirun Seng" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Pirun Seng</a></h1>
+  
+    <h2>Ruby on Rails Developer</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="pirunseng.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Continuous Integration With Codeship</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-12-19T08:19:06+07:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>8:19 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>Codeship</strong> is one of a very cool Continuous Integration (CI) platform. It comes with pre-installed various programming languages, frameworks and dependencies.</p>
+
+<p>With a simple, yet powerful web UI and UX design, it makes us easy to get started in just a few minutes.</p>
+
+<p><strong>Codeship</strong> allows developers to connect to different repositories such as <strong>Github</strong>, <strong>Gitlab</strong> and <strong>Bitbucket</strong>. On top of that, we can setup our testing environment and deployment targets. Whenever the code is pushed to the repository, then <strong>Codeship</strong> gets triggered and run our test. There is an API of the build status in which we can put it in somewhere like the README of our project. We can either enable or disable the build notification on our own.</p>
+
+<p><strong>Codeship Basic is free!!</strong>
+Register for a free account, then we are ready to ship our code so that we can sleep well at night.</p>
+
+<h3>Getting started</h3>
+
+<p><img src="/images/codeship/codeship_navbar.png" title="Navbar" ></p>
+
+<p>Assume that we are already signed in. On the top navigation bar, click on <strong>Projects</strong>, you will as the screenshot above, layout might be changed due to current date.</p>
+
+<p>By clicking on <strong>New Project</strong>, you will be asked to choose which repository you want to connect to.</p>
+
+<p><img src="/images/codeship/codeship_repositories.png" title="Repositories" ></p>
+
+<p>In my case, I click on Github and I&rsquo;ll come to this page in which I will have to put corresponding Git clone URL so that my repository and Codeship is connected.</p>
+
+<p><img src="/images/codeship/codeship_connect_repo.png" title="Connect Repository" ></p>
+
+<p>At the project types selection section, click on <strong>Select Basic project</strong></p>
+
+<p><img src="/images/codeship/codeship_select_plan.png" title="Select Project Type" ></p>
+
+<p>Last but not least, we need to choose the setup command. These are the pre-installed languages, frameworks and dependencies as I have mentioned above. Choose the one you are working on. In my case, I will want to choose Ruby on Rails since I&rsquo;m building a web app with Ruby on Rails.</p>
+
+<p><img src="/images/codeship/codeship_setup_command.png" title="Setup Command" ></p>
+
+<p>Click <strong>Save and go to dashboard</strong>, you should see your first build status.</p>
+
+<p><img src="/images/codeship/codeship_build_status.png" title="Build Status" ></p>
+
+<p>The very last step (optional but recommended), we should display the build status on our repository using Codeship build status API. To do so, you might want to click on the build status, then click on <strong>Project Settings</strong>.</p>
+
+<p><img src="/images/codeship/codeship_project_settings.png" title="Project Settings" ></p>
+
+<p>On the <strong>General</strong> tab, and at the <strong>Status Images</strong> section, we can use any of the image we would like to show the current status of our project. In my case, I use the <strong>Markdown Syntax</strong>. I put it in the README of my project, and here how it looks on my Github repository of the project I have connected to Codeship.</p>
+
+<p><img src="/images/codeship/codeship_build_api.png" title="Codeship Build API" ></p>
+
+<p>It has been a long day already, hasn&rsquo;t it?</p>
+
+<p>Hope you enjoy it!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pirun</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2017-12-19T08:19:06+07:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>8:19 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ci/'>ci</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pirunseng.github.io/blog/2017/12/19/continuous-integration-with-codeship/" data-via="" data-counturl="http://pirunseng.github.io/blog/2017/12/19/continuous-integration-with-codeship/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2017/11/06/active-record-finder-methods-find-or-find-by/" title="Previous Post: Active Record Finder Methods - find or find_by">&laquo; Active Record Finder Methods - find or find_by</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2017/12/19/continuous-integration-with-codeship/">Continuous Integration With Codeship</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/11/06/active-record-finder-methods-find-or-find-by/">Active Record Finder Methods - Find or Find_by</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/10/23/how-to-upload-files-from-remote-location-with-carrierwave/">How to Upload Files From Remote Location With Carrierwave</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/10/22/fast-finder/">Fast Finder</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/10/22/make-use-of-library-we-use/">Make Use of Library We Use</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - Pirun -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <span style="float: right;">
+    <a href="https://www.linkedin.com/in/pirun-seng-87417097/" target="_blank">
+      <img src="/images/linkedinFooter.png" alt="">
+    </a>
+    <a href="https://github.com/PirunSeng" target="_blank" style="margin-left: 5px;">
+      <img src="/images/github.png" alt="" width="22" height="22">
+    </a>
+  </span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

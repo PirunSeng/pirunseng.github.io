@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ci | Pirun Seng]]></title>
+  <link href="http://pirunseng.github.io/blog/categories/ci/atom.xml" rel="self"/>
+  <link href="http://pirunseng.github.io/"/>
+  <updated>2017-12-19T10:14:19+07:00</updated>
+  <id>http://pirunseng.github.io/</id>
+  <author>
+    <name><![CDATA[Pirun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Continuous Integration With Codeship]]></title>
+    <link href="http://pirunseng.github.io/blog/2017/12/19/continuous-integration-with-codeship/"/>
+    <updated>2017-12-19T08:19:06+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2017/12/19/continuous-integration-with-codeship</id>
+    <content type="html"><![CDATA[<p><strong>Codeship</strong> is one of a very cool Continuous Integration (CI) platform. It comes with pre-installed various programming languages, frameworks and dependencies.</p>
+
+<p>With a simple, yet powerful web UI and UX design, it makes us easy to get started in just a few minutes.</p>
+
+<p><strong>Codeship</strong> allows developers to connect to different repositories such as <strong>Github</strong>, <strong>Gitlab</strong> and <strong>Bitbucket</strong>. On top of that, we can setup our testing environment and deployment targets. Whenever the code is pushed to the repository, then <strong>Codeship</strong> gets triggered and run our test. There is an API of the build status in which we can put it in somewhere like the README of our project. We can either enable or disable the build notification on our own.</p>
+
+<p><strong>Codeship Basic is free!!</strong>
+Register for a free account, then we are ready to ship our code so that we can sleep well at night.</p>
+
+<h3>Getting started</h3>
+
+<p><img src="/images/codeship/codeship_navbar.png" title="Navbar" ></p>
+
+<p>Assume that we are already signed in. On the top navigation bar, click on <strong>Projects</strong>, you will as the screenshot above, layout might be changed due to current date.</p>
+
+<p>By clicking on <strong>New Project</strong>, you will be asked to choose which repository you want to connect to.</p>
+
+<p><img src="/images/codeship/codeship_repositories.png" title="Repositories" ></p>
+
+<p>In my case, I click on Github and I&rsquo;ll come to this page in which I will have to put corresponding Git clone URL so that my repository and Codeship is connected.</p>
+
+<p><img src="/images/codeship/codeship_connect_repo.png" title="Connect Repository" ></p>
+
+<p>At the project types selection section, click on <strong>Select Basic project</strong></p>
+
+<p><img src="/images/codeship/codeship_select_plan.png" title="Select Project Type" ></p>
+
+<p>Last but not least, we need to choose the setup command. These are the pre-installed languages, frameworks and dependencies as I have mentioned above. Choose the one you are working on. In my case, I will want to choose Ruby on Rails since I&rsquo;m building a web app with Ruby on Rails.</p>
+
+<p><img src="/images/codeship/codeship_setup_command.png" title="Setup Command" ></p>
+
+<p>Click <strong>Save and go to dashboard</strong>, you should see your first build status.</p>
+
+<p><img src="/images/codeship/codeship_build_status.png" title="Build Status" ></p>
+
+<p>The very last step (optional but recommended), we should display the build status on our repository using Codeship build status API. To do so, you might want to click on the build status, then click on <strong>Project Settings</strong>.</p>
+
+<p><img src="/images/codeship/codeship_project_settings.png" title="Project Settings" ></p>
+
+<p>On the <strong>General</strong> tab, and at the <strong>Status Images</strong> section, we can use any of the image we would like to show the current status of our project. In my case, I use the <strong>Markdown Syntax</strong>. I put it in the README of my project, and here how it looks on my Github repository of the project I have connected to Codeship.</p>
+
+<p><img src="/images/codeship/codeship_build_api.png" title="Codeship Build API" ></p>
+
+<p>It has been a long day already, hasn&rsquo;t it?</p>
+
+<p>Hope you enjoy it!</p>
+]]></content>
+  </entry>
+  
+</feed>
