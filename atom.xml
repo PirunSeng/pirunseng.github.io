@@ -4,14 +4,48 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2018-08-05T13:45:20+07:00</updated>
+  <updated>2018-08-09T16:24:06+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
-    <name><![CDATA[Pirun]]></name>
+    <name><![CDATA[Pirun Seng]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Modify EBS Volume or Disk Space of Amazon EC2]]></title>
+    <link href="http://pirunseng.github.io/blog/2018/08/09/modify-ebs-volume-or-disk-space-of-amazon-ec2/"/>
+    <updated>2018-08-09T15:23:20+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2018/08/09/modify-ebs-volume-or-disk-space-of-amazon-ec2</id>
+    <content type="html"><![CDATA[<p>Amazon has provided us cool and easy ways to modify EBS volume, or in other word is to modify disk space of our instance or server.</p>
+
+<p>I am going to sum up of how we can achieve it by using AWS Console.</p>
+
+<p>If we are running multiple instances and volumes, the first thing we need to know is which volume that is associated with which instance we want to modify.</p>
+
+<p>If we open the <a href="https://console.aws.amazon.com/ec2/">Amazon EC2</a> console and navigate to <strong>Volumes</strong> page, we will see a list of some volumes if we are running multiple instances. For somebody who has already named their volumes, that is okay for them, but as my first experience, I haven&rsquo;t named any of the volumes, so I don&rsquo;t know which Volume of my instance I am looking for to modify.</p>
+
+<p>Worry not! To know which instance our volume is attached to, just click on the volume, and in the <strong>Description</strong> tab below, we can see the instance in <strong>Attachment information</strong>. After find out the instance it is attached to, I recommend to name your volume at this point, if you haven&rsquo;t, so it is helpful when we come back later and that we can catch it up immediately.</p>
+
+<p>Okay so now we know which volume to be modified! BUT! Wait! It is recommended to create a <strong>Snapshot</strong> of your current volume before modifying.</p>
+
+<p>I will just leave a link for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html">How to create a Snapshot</a>. It might take some time due to how big your volume is.</p>
+
+<p>Once you already create a snapshot, then you&rsquo;re ready for modifying the volume.</p>
+
+<p>Let select a volume, and choose the dropdown <strong>Actions</strong> button on the top, and select <strong>Modify Volume</strong>. We will see a modal window of Modify Volume, verify the Volume Type, adjust the size in GiB you like, and click <strong>Modify</strong> button, and <strong>Yes</strong>.</p>
+
+<p>Last, modifying volume size has no effect until we tell the file system to get advantage of new storage size.
+This is how you can <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html">Extending a Linux File System after Resizing the Volume</a>.</p>
+
+<p><strong>Please&hellip;</strong> keep in mind that when we want to modify something like this, eg. Volume (disk space), Data, etc, we do have to do a back-up, like we were creating a <strong>Snapshot</strong> of the volume, so it safe in case we want to rollback or something. Plus, it is <strong>even more better</strong> if you can try it on a test instance and volume first before working on the live one.</p>
+
+<p>Reference: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/console-modify.html">Modifying an EBS Volume from the Console</a></p>
+
+<p>Cheers,</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Continuous Integration With Codeship]]></title>
