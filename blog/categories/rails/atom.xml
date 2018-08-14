@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2018-08-10T14:05:30+07:00</updated>
+  <updated>2018-08-14T21:04:35+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun Seng]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Common Mistakes We Might Make in Rails Development]]></title>
+    <link href="http://pirunseng.github.io/blog/2018/08/12/common-mistakes-we-might-make-in-rails-development/"/>
+    <updated>2018-08-12T17:21:54+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2018/08/12/common-mistakes-we-might-make-in-rails-development</id>
+    <content type="html"><![CDATA[<h2>1 - Irreversible Migration</h2>
+
+<p><strong>Rails 3</strong> has introduced <code>change</code> method which help reduces lines of migration code from two method <code>up</code> and <code>down</code> to just one which is <code>change</code> method. For example, we want to change default value of <code>nil</code> to an empty string <code>''</code>.</p>
+
+<pre><code>def change
+  change_column_default :articles, :owner, ''
+end
+</code></pre>
+
+<p>There is no problem when we run <code>rake db:migrate</code>. Yet, we don&rsquo;t realize that we have made a mistake until we rollback the migration at some point. Then there will be an exception of <code>ActiveRecord::IrreversibleMigration</code>.</p>
+
+<p>To get rid of the <code>ActiveRecord::IrreversibleMigration</code> exception, we have to rewrite both <code>up</code> and <code>down</code> methods again.</p>
+
+<pre><code>def up
+  change_column_default :articles, :owner, ''
+end
+
+def down
+  change_column_default :articles, :owner, nil
+end
+</code></pre>
+
+<p>Heh! If you&rsquo;re using <strong>Rails 5</strong>, there is a better way that help improve this case by adding <code>from</code> (old default value or nil) and <code>to</code> (new default value) options.</p>
+
+<pre><code>def change
+  change_column_default :articles, :owner, from: nil, to: ''
+end
+</code></pre>
+
+<p>By specifying the <code>from</code> and <code>to</code> options, we can freely run our migrations up and down without getting any of <code>ActiveRecord::IrreversibleMigration</code> exceptions anymore.</p>
+
+<h2>2 - Accidentally Deleted Object(s)</h2>
+
+<p>To be continued&hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Active Record Finder Methods - Find or Find_by]]></title>
