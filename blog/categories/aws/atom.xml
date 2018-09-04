@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aws | Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/blog/categories/aws/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2018-08-14T21:04:35+07:00</updated>
+  <updated>2018-09-04T11:58:12+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun Seng]]></name>
@@ -39,7 +39,12 @@
 <p>Let select a volume, and choose the dropdown <strong>Actions</strong> button on the top, and select <strong>Modify Volume</strong>. We will see a modal window of Modify Volume, verify the Volume Type, adjust the size in GiB you like, and click <strong>Modify</strong> button, and <strong>Yes</strong>.</p>
 
 <p>Last, modifying volume size has no effect until we tell the file system to get advantage of new storage size.
-This is how you can <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html">Extending a Linux File System after Resizing the Volume</a>.</p>
+This is how you can <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html">Extending a Linux File System after Resizing the Volume</a>.
+In my case, I just need to run the following two commands.
+<code>
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1
+</code></p>
 
 <p><strong>Please&hellip;</strong> keep in mind that when we want to modify something like this, eg. Volume (disk space), Data, etc, we do have to do a back-up, like we were creating a <strong>Snapshot</strong> of the volume, so it safe in case we want to rollback or something. Plus, it is <strong>even more better</strong> if you can try it on a test instance and volume first before working on the live one.</p>
 

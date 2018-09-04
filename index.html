@@ -184,7 +184,14 @@
 <p>Let select a volume, and choose the dropdown <strong>Actions</strong> button on the top, and select <strong>Modify Volume</strong>. We will see a modal window of Modify Volume, verify the Volume Type, adjust the size in GiB you like, and click <strong>Modify</strong> button, and <strong>Yes</strong>.</p>
 
 <p>Last, modifying volume size has no effect until we tell the file system to get advantage of new storage size.
-This is how you can <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html">Extending a Linux File System after Resizing the Volume</a>.</p>
+This is how you can <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html">Extending a Linux File System after Resizing the Volume</a>.
+In my case, I just need to run the following two commands.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo growpart /dev/xvda 1
+</span><span class='line'>sudo resize2fs /dev/xvda1</span></code></pre></td></tr></table></div></figure>
+
 
 <p><strong>Please&hellip;</strong> keep in mind that when we want to modify something like this, eg. Volume (disk space), Data, etc, we do have to do a back-up, like we were creating a <strong>Snapshot</strong> of the volume, so it safe in case we want to rollback or something. Plus, it is <strong>even more better</strong> if you can try it on a test instance and volume first before working on the live one.</p>
 
