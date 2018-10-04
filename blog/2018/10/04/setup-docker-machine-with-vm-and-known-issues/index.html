@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Feel Free to Give Me Feedback - Pirun Seng</title>
+  <title>Setup Docker Machine With VM and Known Issues - Pirun Seng</title>
   <meta name="author" content="Pirun Seng">
 
   
-  <meta name="description" content="Feel Free to Give Me Feedback Hi There, Thank you for reaching this page! In case you find any issues on any of my posts, it is my pleasure to hear &hellip;">
+  <meta name="description" content="Hi There, today I am going to share steps, but not actually how as I will leave a reference to the Docker docs at the end, to set up Docker Machine &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pirunseng.github.io/blog/feedback/">
+  <link rel="canonical" href="http://pirunseng.github.io/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Pirun Seng" type="application/atom+xml">
@@ -65,22 +65,90 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Feel Free to Give Me Feedback</h1>
+    
+      <h1 class="entry-title">Setup Docker Machine With VM and Known Issues</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2018-10-04T16:04:48+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>4:04 pm</span></time>
+        
+      </p>
     
   </header>
+
+
+<div class="entry-content"><p>Hi There, today I am going to share steps, but not actually how as I will leave a reference to the Docker docs at the end, to set up Docker Machine and some known issues I have experienced.</p>
+
+<ol>
+<li>Install Docker</li>
+<li>Install Docker Machine</li>
+<li>Download and Install VirtualBox (VirtualBox-5.2.18-124319-OSX.dmg)</li>
+<li>Create Docker Machine</li>
+<li>Known issues:
+
+<ul>
+<li>Failed to install VirtualBox on MacOS. You may find this link helpful; <a href="https://matthewpalmer.net/blog/2017/12/10/install-virtualbox-mac-high-sierra/index.html">How to Install VirtualBox on macOS Mojave and High Sierra</a></li>
+<li>Failed to create docker machine. The solution that works for me is just to reboot machine. After reboot, I could create docker machine successfully.</li>
+<li>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? => This means that your Docker is not running. So you may just run your Docker app, and see that it is running. That should fix this problem.</li>
+</ul>
+</li>
+</ol>
+
+
+<p><strong>Reference:</strong> <a href="https://docs.docker.com/machine/install-machine">https://docs.docker.com/machine/install-machine</a></p>
+
+<p>Nice day,</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <h4>Hi There,</h4>
 
-<p>Thank you for reaching this page! In case you find any issues on any of my posts, it is my pleasure to hear your feedback.</p>
-<p>I am also open to give further detail, a conversation, or share more practical experiences in case the post is enough for your discovery.</p>
-<p>You can find me via my Github and Linked profile links at the bottom right footer of the page.</p>
+<span class="byline author vcard">Posted by <span class="fn">Pirun Seng</span></span>
 
-<h4>Cheers,</h4>
+      
 
+
+
+
+<time class='entry-date' datetime='2018-10-04T16:04:48+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>4:04 pm</span></time>
+      
+
+<span class="categories">
   
+    <a class='category' href='/blog/categories/docker/'>docker</a>, <a class='category' href='/blog/categories/docker-machine/'>docker-machine</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pirunseng.github.io/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/" data-via="" data-counturl="http://pirunseng.github.io/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2018/08/12/common-mistakes-we-might-make-in-rails-development/" title="Previous Post: Common Mistakes We Might Make in Rails Development">&laquo; Common Mistakes We Might Make in Rails Development</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

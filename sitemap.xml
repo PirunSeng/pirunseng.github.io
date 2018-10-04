@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://pirunseng.github.io/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/</loc>
+<lastmod>2018-10-04T16:04:48+07:00</lastmod>
+</url>
+<url>
 <loc>http://pirunseng.github.io/blog/2018/08/12/common-mistakes-we-might-make-in-rails-development/</loc>
 <lastmod>2018-08-12T17:21:54+07:00</lastmod>
 </url>
@@ -76,6 +80,12 @@
 </url>
 <url>
 <loc>http://pirunseng.github.io/blog/categories/ci/</loc>
+</url>
+<url>
+<loc>http://pirunseng.github.io/blog/categories/docker/</loc>
+</url>
+<url>
+<loc>http://pirunseng.github.io/blog/categories/docker-machine/</loc>
 </url>
 <url>
 <loc>http://pirunseng.github.io/posts/2/</loc>

@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2018-09-04T11:58:12+07:00</updated>
+  <updated>2018-10-04T16:44:36+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun Seng]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Setup Docker Machine With VM and Known Issues]]></title>
+    <link href="http://pirunseng.github.io/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/"/>
+    <updated>2018-10-04T16:04:48+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues</id>
+    <content type="html"><![CDATA[<p>Hi There, today I am going to share steps, but not actually how as I will leave a reference to the Docker docs at the end, to set up Docker Machine and some known issues I have experienced.</p>
+
+<ol>
+<li>Install Docker</li>
+<li>Install Docker Machine</li>
+<li>Download and Install VirtualBox (VirtualBox-5.2.18-124319-OSX.dmg)</li>
+<li>Create Docker Machine</li>
+<li>Known issues:
+
+<ul>
+<li>Failed to install VirtualBox on MacOS. You may find this link helpful; <a href="https://matthewpalmer.net/blog/2017/12/10/install-virtualbox-mac-high-sierra/index.html">How to Install VirtualBox on macOS Mojave and High Sierra</a></li>
+<li>Failed to create docker machine. The solution that works for me is just to reboot machine. After reboot, I could create docker machine successfully.</li>
+<li>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? => This means that your Docker is not running. So you may just run your Docker app, and see that it is running. That should fix this problem.</li>
+</ul>
+</li>
+</ol>
+
+
+<p><strong>Reference:</strong> <a href="https://docs.docker.com/machine/install-machine">https://docs.docker.com/machine/install-machine</a></p>
+
+<p>Nice day,</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Common Mistakes We Might Make in Rails Development]]></title>

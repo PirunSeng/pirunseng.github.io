@@ -9,7 +9,7 @@
   <meta name="author" content="Pirun Seng">
 
   
-  <meta name="description" content="1 - Irreversible Migration Rails 3 has introduced change method which help reduces lines of migration code from two method up and down to just one &hellip;">
+  <meta name="description" content="Hi There, today I am going to share steps, but not actually how as I will leave a reference to the Docker docs at the end, to set up Docker Machine &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/">Setup Docker Machine With VM and Known Issues</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2018-10-04T16:04:48+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>4:04 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Hi There, today I am going to share steps, but not actually how as I will leave a reference to the Docker docs at the end, to set up Docker Machine and some known issues I have experienced.</p>
+
+<ol>
+<li>Install Docker</li>
+<li>Install Docker Machine</li>
+<li>Download and Install VirtualBox (VirtualBox-5.2.18-124319-OSX.dmg)</li>
+<li>Create Docker Machine</li>
+<li>Known issues:
+
+<ul>
+<li>Failed to install VirtualBox on MacOS. You may find this link helpful; <a href="https://matthewpalmer.net/blog/2017/12/10/install-virtualbox-mac-high-sierra/index.html">How to Install VirtualBox on macOS Mojave and High Sierra</a></li>
+<li>Failed to create docker machine. The solution that works for me is just to reboot machine. After reboot, I could create docker machine successfully.</li>
+<li>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running? => This means that your Docker is not running. So you may just run your Docker app, and see that it is running. That should fix this problem.</li>
+</ul>
+</li>
+</ol>
+
+
+<p><strong>Reference:</strong> <a href="https://docs.docker.com/machine/install-machine">https://docs.docker.com/machine/install-machine</a></p>
+
+<p>Nice day,</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -548,57 +597,6 @@ Output     : json
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2017/10/20/backup-and-restore-postgres-database-from-amazon-rds/">Backup and Restore Postgres Database From Amazon RDS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2017-10-20T16:59:33+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>4:59 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There are two things might happen when we do the backup and restore database. We need to know whether the database is located in local server or in any separate server like RDS.</p>
-
-<p>Here, I&rsquo;d like to raise two ways of backup Postgres database. One is the local database, and other one is the separate database.</p>
-
-<p><strong>Local Database</strong></p>
-
-<pre><code>Backup: pg_dump -n schema_name -d db_name &gt; backup_filename.dump
-
-Restore: psql db_name &lt; backup_filename.dump
-</code></pre>
-
-<p><strong>Host Database (Amazon RDS)</strong> (You will be prompted to type your database password.)</p>
-
-<pre><code>Backup: pg_dump -h db_host -p db_port -U db_user -n schema_name -d db_name &gt; backup_filename.dump
-
-Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
-</code></pre>
-
-<p>You should notice that we need to specify database host, port and user if we have the database setup in a host server, Amazon RDS in my case. That is the important point that some developers might forget.</p>
-
-<p>For further detail of the other backup and restore options, please refer to the <a href="https://www.postgresql.org/docs/">PostgreSQL docs</a> and look for database backup and that applies to the Postgres version you use.</p>
-
-<p>Enjoy your DBA time!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -614,6 +612,10 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/">Setup Docker Machine With VM and Known Issues</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/08/12/common-mistakes-we-might-make-in-rails-development/">Common Mistakes We Might Make in Rails Development</a>
       </li>
     
@@ -627,10 +629,6 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
     
       <li class="post">
         <a href="/blog/2017/11/06/active-record-finder-methods-find-or-find-by/">Active Record Finder Methods - Find or Find_by</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/10/23/how-to-upload-files-from-remote-location-with-carrierwave/">How to Upload Files From Remote Location With Carrierwave</a>
       </li>
     
   </ul>
