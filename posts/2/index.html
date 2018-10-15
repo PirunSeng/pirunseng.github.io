@@ -9,7 +9,7 @@
   <meta name="author" content="Pirun Seng">
 
   
-  <meta name="description" content="There are two things might happen when we do the backup and restore database. We need to know whether the database is located in local server or in &hellip;">
+  <meta name="description" content="First thing we need to do is to install Amazon Web Service Command Line Interface (AWS CLI). Depending on your environment, there are different ways &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/10/21/copy-file-and-entire-directory-from-amazon-s3/">Copy File and Entire Directory From Amazon S3 to Local Machine</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-10-21T18:06:56+07:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2017</span></span> <span class='time'>6:06 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>First thing we need to do is to install <strong>Amazon Web Service Command Line Interface</strong> (AWS CLI).</p>
+
+<p>Depending on your environment, there are different ways to <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">install AWS CLI</a>. I&rsquo;m using Mac OSX, and I prefer to install it via Homebrew <code>brew install awscli</code>.</p>
+
+<p>Then we need to configure awscli by running: <code>aws configure</code>. You will be prompted to put your AWS Access Key Id, Secret Key, Region and Output. The following is an example:</p>
+
+<pre><code>Access key : foo
+Secret key : bar
+Region     : us-west-1
+Output     : json
+</code></pre>
+
+<p>We are all set. Now, I gonna show you how we copy a specific file and an entire directory from Amazon S3.</p>
+
+<p><strong>Copy a file : </strong> <code>aws s3 cp s3://bucket_name/dir/file.png local_path</code></p>
+
+<p><strong>Copy a directory : </strong> <code>aws s3 cp --recursive s3://bucket_name/dir local_path</code></p>
+
+<p>The example above, I show you how to copy a file, &lsquo;file.png&rsquo;, and an entire directory, &lsquo;dir&rsquo;, by specifying <code>--recursive</code> option from Amazon S3 to your local machine or directory where you specify <code>local_path</code>.</p>
+
+<p>Enjoy!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -168,6 +217,10 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2018/10/15/three-main-headers-required-for-rails-api-authorization/">Three Main Headers Required for Rails API Authorization</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/10/04/setup-docker-machine-with-vm-and-known-issues/">Setup Docker Machine With VM and Known Issues</a>
       </li>
     
@@ -181,10 +234,6 @@ Restore: psql db_name -h db_host -p db_port -U db_user &lt; backup_filename.dump
     
       <li class="post">
         <a href="/blog/2017/12/19/continuous-integration-with-codeship/">Continuous Integration With Codeship</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/11/06/active-record-finder-methods-find-or-find-by/">Active Record Finder Methods - Find or Find_by</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Pirun Seng]]></title>
   <link href="http://pirunseng.github.io/atom.xml" rel="self"/>
   <link href="http://pirunseng.github.io/"/>
-  <updated>2018-10-04T16:44:36+07:00</updated>
+  <updated>2018-10-15T15:23:50+07:00</updated>
   <id>http://pirunseng.github.io/</id>
   <author>
     <name><![CDATA[Pirun Seng]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Three Main Headers Required for Rails API Authorization]]></title>
+    <link href="http://pirunseng.github.io/blog/2018/10/15/three-main-headers-required-for-rails-api-authorization/"/>
+    <updated>2018-10-15T14:54:28+07:00</updated>
+    <id>http://pirunseng.github.io/blog/2018/10/15/three-main-headers-required-for-rails-api-authorization</id>
+    <content type="html"><![CDATA[<p><img src="http://pirunseng.github.io/images/rails-api-auth.png" title="Rails API Authorization" alt="Rails API Authorization" /></p>
+
+<p>Once building API end points, it is good practice to authorize incoming requests just like we do with our application.</p>
+
+<p>As a Rails developer, I&rsquo;ve also involved in building API end points along with test coverage, too. We use <code>devise</code> for application authorization, and <code>devise_token_auth</code> for API authorization.</p>
+
+<p>So far, we use Postman to test our API, you may use the same or a different one. However, the three main Headers which is required to request authorized resources are: <strong>access-token</strong>, <strong>uid</strong>, and <strong>client</strong>.</p>
+
+<p>In order to get these Headers, we do need to send a post request to sign in a user first. If you signed in successfully, we will get a User object in the Body tab, and we can find our three main headers in Headers tab.</p>
+
+<p>Happy coding,</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setup Docker Machine With VM and Known Issues]]></title>
